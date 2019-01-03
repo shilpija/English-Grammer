@@ -15,7 +15,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/color_orange"
+            android:background="@color/colorPrimaryDark"
             android:minHeight="?attr/actionBarSize"
             app:titleTextColor="@android:color/white">
 
@@ -24,7 +24,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:background="@color/color_orange"
+                android:background="@color/colorPrimaryDark"
                 android:orientation="vertical">
 
                 <LinearLayout
