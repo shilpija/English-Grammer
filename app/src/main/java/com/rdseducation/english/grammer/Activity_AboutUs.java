@@ -1,6 +1,9 @@
 package com.rdseducation.english.grammer;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,6 +11,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.List;
 
 public class Activity_AboutUs extends AppCompatActivity implements View.OnClickListener {
 
@@ -42,14 +47,15 @@ public class Activity_AboutUs extends AppCompatActivity implements View.OnClickL
 
             case R.id.tvMail:
 
-                Intent intent1 = new Intent(Intent.ACTION_SENDTO, Uri.parse("rdseducationapp@gmail.com"));
-                intent1.putExtra(Intent.EXTRA_SUBJECT, "Your Subject");
-                intent1.putExtra(Intent.EXTRA_TEXT, "The message");
-                try {
+                try{
+                    Intent intent1 = new Intent (Intent.ACTION_VIEW , Uri.parse("mailto:" + "rdseducationapp@gmail.com"));
+//                    intent1.putExtra(Intent.EXTRA_SUBJECT, "your_subject");
+//                    intent1.putExtra(Intent.EXTRA_TEXT, "your_text");
                     startActivity(intent1);
-                } catch (android.content.ActivityNotFoundException ex) {
-                    Toast.makeText(this, "Mail account not configured", Toast.LENGTH_LONG).show();
+                }catch(ActivityNotFoundException e){
+                    //TODO smth
                 }
+
                 break;
         }
     }

@@ -13,6 +13,7 @@ public class Activity_OneWord extends AppCompatActivity implements View.OnClickL
 
     TextView tvOne1, tvOne2;
     FloatingActionButton btnMsg;
+    Count count;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -23,6 +24,8 @@ public class Activity_OneWord extends AppCompatActivity implements View.OnClickL
     }
 
     private void init() {
+
+        count = new Count(this);
 
         tvOne1 = (TextView) findViewById(R.id.tvOne1);
         tvOne2 = (TextView) findViewById(R.id.tvOne2);
@@ -38,13 +41,14 @@ public class Activity_OneWord extends AppCompatActivity implements View.OnClickL
 
             case R.id.btnMsg:
 
+                count.countt();
                 Uri uri = Uri.parse("https://api.whatsapp.com/send?phone=919116161918&text=hello%20RDS%20Education"); // missing 'http://' will cause crashed
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
                 break;
 
             case R.id.tvOne1:
-
+                count.countt();
                 Intent intent4 = new Intent(Activity_OneWord.this, Activity_pdf.class);
                 intent4.putExtra("EXTRA_SESSION_ID", "oneword1.pdf");
                 startActivity(intent4);
@@ -53,7 +57,7 @@ public class Activity_OneWord extends AppCompatActivity implements View.OnClickL
                 break;
 
             case R.id.tvOne2:
-
+                count.countt();
                 Intent intent5 = new Intent(Activity_OneWord.this, Activity_pdf.class);
                 intent5.putExtra("EXTRA_SESSION_ID", "oneword2.pdf");
                 startActivity(intent5);

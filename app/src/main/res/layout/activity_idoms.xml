@@ -172,7 +172,7 @@
             android:id="@+id/btnMsg"
             app:backgroundTint="@color/colorPrimary"
             app:layout_anchorGravity="bottom|right|end"
-            app:srcCompat="@drawable/share" />
+            app:srcCompat="@drawable/mail" />
 
 
     </RelativeLayout>

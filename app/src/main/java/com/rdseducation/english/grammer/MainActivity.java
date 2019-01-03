@@ -34,7 +34,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     String android_id, deviceId;
     private AdView mAdView;
     ImageView edit_profile;
-    InterstitialAd mInterstitialAd;
+    SharedData sharedData;
+    //    InterstitialAd mInterstitialAd;
+    Count count;
+    public static int ClickCount = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +51,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void init() {
 
+        count = new Count(this);
+
+        sharedData = new SharedData(this);
+
+        sharedData.AddData("count", "0");
+
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer);
         drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED, GravityCompat.END);
@@ -59,6 +68,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         android_id = Settings.Secure.getString(this.getContentResolver(), Settings.Secure.ANDROID_ID);
         deviceId = md5(android_id).toUpperCase();
+        sharedData.AddData("deviceId", deviceId);
         Log.i("deviceid=", deviceId);
 
         llBad = (LinearLayout) findViewById(R.id.llBad);
@@ -71,7 +81,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ll3 = (LinearLayout) findViewById(R.id.ll3);
         ll4 = (LinearLayout) findViewById(R.id.ll4);
         ll5 = (LinearLayout) findViewById(R.id.ll5);
-        edit_profile = (ImageView)findViewById(R.id.edit_profile);
+        edit_profile = (ImageView) findViewById(R.id.edit_profile);
         edit_profile.setOnClickListener(this);
         llBad.setOnClickListener(this);
         llTableTenn.setOnClickListener(this);
@@ -85,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         llAbout.setOnClickListener(this);
 
         mAdView = (AdView) findViewById(R.id.adView);
-        mInterstitialAd = new InterstitialAd(this);
+//        mInterstitialAd = new InterstitialAd(this);
 
         AdRequest adRequest = new AdRequest.Builder()
                 .addTestDevice(deviceId)
@@ -125,25 +135,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mAdView.loadAd(adRequest);
 
         // set the ad unit ID
-        mInterstitialAd.setAdUnitId(getString(R.string.interstitial_full_screen));
-
-
-        // Load ads into Interstitial Ads
-        mInterstitialAd.loadAd(adRequest);
-
-        mInterstitialAd.setAdListener(new AdListener() {
-            public void onAdLoaded() {
-                showInterstitial();
-            }
-        });
+//        mInterstitialAd.setAdUnitId(getString(R.string.interstitial_full_screen));
+//
+//
+//        // Load ads into Interstitial Ads
+//        mInterstitialAd.loadAd(adRequest);
+//
+//        mInterstitialAd.setAdListener(new AdListener() {
+//            public void onAdLoaded() {
+//                showInterstitial();
+//            }
+//        });
     }
 
-    private void showInterstitial() {
-
-        if (mInterstitialAd.isLoaded()) {
-            mInterstitialAd.show();
-        }
-    }
+//    private void showInterstitial() {
+//
+//        if (mInterstitialAd.isLoaded()) {
+//            mInterstitialAd.show();
+//        }
+//    }
 
     @Override
     public void onPause() {
@@ -194,6 +204,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.edit_profile:
 
+                count.countt();
+
                 try {
                     Intent i = new Intent(Intent.ACTION_SEND);
                     i.setType("text/plain");
@@ -208,61 +220,82 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.llBad:
+
+                count.countt();
+
                 Intent intent = new Intent(MainActivity.this, Activity_pdf.class);
                 intent.putExtra("EXTRA_SESSION_ID", "ant.pdf");
                 startActivity(intent);
-
                 break;
 
             case R.id.llTableTenn:
+
+                count.countt();
+
                 Intent intent1 = new Intent(MainActivity.this, Activity_Idoms.class);
                 startActivity(intent1);
-                finish();
+
                 break;
 
             case R.id.ll1:
+
+                count.countt();
+
                 Intent intent11 = new Intent(MainActivity.this, Activity_OneWord.class);
                 startActivity(intent11);
-                finish();
+
                 break;
 
             case R.id.ll2:
+
+                count.countt();
+
                 Intent intent6 = new Intent(MainActivity.this, Activity_pdf.class);
                 intent6.putExtra("EXTRA_SESSION_ID", "phrasal.pdf");
                 startActivity(intent6);
                 break;
 
             case R.id.ll3:
+
+                count.countt();
+
                 Intent intent7 = new Intent(MainActivity.this, Activity_pdf.class);
                 intent7.putExtra("EXTRA_SESSION_ID", "root.pdf");
                 startActivity(intent7);
                 break;
 
             case R.id.ll4:
+                count.countt();
+
                 Intent intent8 = new Intent(MainActivity.this, Activity_pdf.class);
                 intent8.putExtra("EXTRA_SESSION_ID", "syn.pdf");
                 startActivity(intent8);
                 break;
 
             case R.id.ll5:
+                count.countt();
+
                 Intent intent9 = new Intent(MainActivity.this, Activity_pdf.class);
                 intent9.putExtra("EXTRA_SESSION_ID", "voc.pdf");
                 startActivity(intent9);
                 break;
 
             case R.id.llPractice:
+                count.countt();
                 Intent intent10 = new Intent(MainActivity.this, Activity_pdf.class);
                 intent10.putExtra("EXTRA_SESSION_ID", "practiceset.pdf");
                 startActivity(intent10);
                 break;
 
             case R.id.llQuesBank:
+                count.countt();
                 Intent intent31 = new Intent(MainActivity.this, Activity_pdf.class);
                 intent31.putExtra("EXTRA_SESSION_ID", "questionbank.pdf");
                 startActivity(intent31);
                 break;
 
             case R.id.llAbout:
+                count.countt();
                 Intent intent2 = new Intent(MainActivity.this, Activity_AboutUs.class);
                 startActivity(intent2);
                 break;
@@ -278,13 +311,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         switch (position) {
             case 0:
+                count.countt();
                 Intent intent = new Intent(MainActivity.this, MainActivity.class);
                 startActivity(intent);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 break;
 
             case 1:
-
+                count.countt();
                 try {
                     Intent i = new Intent(Intent.ACTION_SEND);
                     i.setType("text/plain");
@@ -299,22 +333,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case 2:
+                count.countt();
                 Intent intent3 = new Intent(MainActivity.this, Activity_AboutUs.class);
                 startActivity(intent3);
                 intent3.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 break;
 
             case 3:
+                count.countt();
                 Intent intent1 = new Intent(MainActivity.this, Activity_Rateus.class);
                 startActivity(intent1);
                 break;
 
             case 4:
+                count.countt();
                 Intent intent12 = new Intent(MainActivity.this, Activity_Website.class);
                 startActivity(intent12);
                 break;
 
             case 5:
+                count.countt();
                 Uri uri1 = Uri.parse("https://play.google.com/store/search?q=rds%20education");
                 Intent goToMarket1 = new Intent(Intent.ACTION_VIEW, uri1);
                 goToMarket1.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY |
@@ -330,12 +368,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
             case 6:
-
+                count.countt();
                 startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/rdseducation/videos")));
                 break;
 
             case 7:
-
+                count.countt();
                 Uri uri11 = Uri.parse("https://play.google.com/store/apps/details?id=com.rdseducation.english.grammer");
                 Intent goToMarket11 = new Intent(Intent.ACTION_VIEW, uri11);
                 goToMarket11.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY |
@@ -359,8 +397,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         new AlertDialog.Builder(this)
                 .setTitle("Closing Activity")
                 .setMessage("Are you sure you want to close this activity?")
-                .setPositiveButton("Yes", new DialogInterface.OnClickListener()
-                {
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         finish();
@@ -374,7 +411,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         //Handle the back button
-        if(keyCode == KeyEvent.KEYCODE_BACK) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
             //Ask the user if they want to quit
             new AlertDialog.Builder(this)
                     .setTitle("English Grammer")
@@ -393,8 +430,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     .show();
 
             return true;
-        }
-        else {
+        } else {
             return super.onKeyDown(keyCode, event);
         }
 

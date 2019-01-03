@@ -37,6 +37,7 @@ public class Activity_pdf extends AppCompatActivity implements OnPageChangeListe
     String totalPage;
     Integer pages = 0;
     Integer pageNumber = 0;
+    Count count;
     private AdView mAdView;
     String android_id, deviceId;
 
@@ -49,7 +50,7 @@ public class Activity_pdf extends AppCompatActivity implements OnPageChangeListe
     }
 
     private void init() {
-
+        count = new Count(this);
         mAdView = (AdView) findViewById(R.id.adView);
 
         android_id = Settings.Secure.getString(this.getContentResolver(), Settings.Secure.ANDROID_ID);
@@ -206,12 +207,12 @@ public class Activity_pdf extends AppCompatActivity implements OnPageChangeListe
         }
     }
 
-    @Override
-    public void onBackPressed() {
-
-        Intent intent = new Intent(Activity_pdf.this,MainActivity.class);
-        startActivity(intent);
-        finish();
-        super.onBackPressed();
-    }
+//    @Override
+//    public void onBackPressed() {
+//        count.countt();
+//        Intent intent = new Intent(Activity_pdf.this,MainActivity.class);
+//        startActivity(intent);
+//        finish();
+//        super.onBackPressed();
+//    }
 }
