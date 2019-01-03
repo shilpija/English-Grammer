@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">RDS EDUCATION</string>
+
+
+    <string name="drawer_open">Menu opened</string>
+
+    <string name="drawer_close">Menu closed</string>
+
+    <string-array name="nav_drawer_labels">
+
+        <item>@string/nav_item_enggrammer</item>
+        <item>@string/nav_item_share</item>
+        <item>@string/nav_item_aboutus</item>
+        <item>@string/nav_item_rateus</item>
+        <item>@string/nav_item_web</item>
+        <item>@string/nav_item_anotherapp</item>
+        <item>@string/nav_item_youtube</item>
+        <item>@string/nav_item_update</item>
+
+    </string-array>
+
+    <string name="nav_item_enggrammer">Home</string>
+    <string name="nav_item_share">Share</string>
+    <string name="nav_item_aboutus">About Us</string>
+    <string name="nav_item_rateus">Rate Us</string>
+    <string name="nav_item_web">Website</string>
+    <string name="nav_item_anotherapp">हमारे अन्य एप्प</string>
+    <string name="nav_item_youtube">Video class</string>
+    <string name="nav_item_update">Update App</string>
+
+
+    <!-- AdMob ad unit IDs -->
+    <string name="admob_app_id">ca-app-pub-6997600195538301~1418555971</string>
+    <string name="banner_home_footer">ca-app-pub-6997600195538301/9589470289</string>
+    <string name="interstitial_full_screen">ca-app-pub-6997600195538301/6485505239</string>
+</resources>

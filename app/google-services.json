@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1029538763069",
+    "firebase_url": "https://english-grammer-348e9.firebaseio.com",
+    "project_id": "english-grammer-348e9",
+    "storage_bucket": "english-grammer-348e9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1029538763069:android:1da1a1eb6faa0c80",
+        "android_client_info": {
+          "package_name": "com.rdseducation.english.grammer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1029538763069-4bcechsm7qh2575qjpt8nop6h14pc7h5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYSGiNBT31vGJ_0FAGA0ZLn1Fnh66-10Y"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
