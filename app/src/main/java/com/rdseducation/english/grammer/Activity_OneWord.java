@@ -52,7 +52,7 @@ public class Activity_OneWord extends AppCompatActivity implements View.OnClickL
                 Intent intent4 = new Intent(Activity_OneWord.this, Activity_pdf.class);
                 intent4.putExtra("EXTRA_SESSION_ID", "oneword1.pdf");
                 startActivity(intent4);
-                finish();
+//                finish();
 
                 break;
 
@@ -61,7 +61,7 @@ public class Activity_OneWord extends AppCompatActivity implements View.OnClickL
                 Intent intent5 = new Intent(Activity_OneWord.this, Activity_pdf.class);
                 intent5.putExtra("EXTRA_SESSION_ID", "oneword2.pdf");
                 startActivity(intent5);
-                finish();
+//                finish();
 
                 break;
         }

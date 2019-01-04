@@ -25,7 +25,7 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -33,12 +33,11 @@
 
                     <TextView
                         android:id="@+id/main_text_title"
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight=".30"
+                        android:layout_centerInParent="true"
                         android:gravity="center"
                         android:padding="10dp"
-                        android:singleLine="true"
                         android:text="English Grammer"
                         android:textColor="#ffffff"
                         android:textSize="18dp"
@@ -46,55 +45,49 @@
 
                     <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true">
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
+
+                        <ImageView
+                            android:id="@+id/edit_profile"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginRight="5dp"
-                            android:gravity="right|center"
-                            android:orientation="horizontal">
+                            android:background="@drawable/share"
+                            android:backgroundTint="#ffffff"
+                            android:gravity="end"
+                            android:visibility="visible" />
 
-                            <ImageView
-                                android:id="@+id/edit_profile"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="end|center"
-                                android:layout_marginRight="20dp"
-                                android:background="@drawable/share"
-                                android:backgroundTint="#ffffff"
-                                android:visibility="visible" />
 
-                        </LinearLayout>
                     </LinearLayout>
-                </LinearLayout>
+                </RelativeLayout>
 
             </LinearLayout>
         </android.support.v7.widget.Toolbar>
 
-
-        <RelativeLayout
-            android:id="@+id/ivBann"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/toolbar"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:background="@drawable/banner" />
-        </RelativeLayout>
-
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/ivBann">
+            android:layout_below="@+id/toolbar">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/ivBann"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:background="@drawable/banner" />
+                </RelativeLayout>
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -153,7 +146,6 @@
                             android:background="@drawable/shape"
                             android:gravity="center"
                             android:orientation="vertical"
-
                             android:paddingBottom="30dp"
                             android:paddingTop="30dp"
                             android:visibility="visible">
@@ -169,10 +161,9 @@
                                 android:id="@+id/tvTable"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_below="@+id/ivBad"
                                 android:layout_marginTop="5dp"
                                 android:gravity="center"
-                                android:text="Idoms and Phrases"
+                                android:text="Idioms and Phrases"
                                 android:textColor="#FF0F33B8"
                                 android:textSize="12sp"
                                 android:textStyle="bold" />
@@ -201,7 +192,6 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_below="@+id/ivBad"
                                 android:layout_marginTop="5dp"
                                 android:gravity="center"
                                 android:text="One Word Substitution"
@@ -242,12 +232,11 @@
                             android:paddingTop="30dp"
                             android:visibility="visible">
 
-
                             <ImageView
                                 android:layout_width="75dp"
                                 android:layout_height="75dp"
                                 android:layout_gravity="center"
-                                android:background="@drawable/four" />
+                                app:srcCompat="@drawable/four" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -291,7 +280,6 @@
                                 android:textSize="12sp"
                                 android:textStyle="bold" />
 
-
                         </LinearLayout>
 
                         <LinearLayout
@@ -306,7 +294,6 @@
                             android:paddingBottom="30dp"
                             android:paddingTop="30dp"
                             android:visibility="visible">
-
 
                             <ImageView
                                 android:layout_width="75dp"
@@ -344,7 +331,6 @@
                         android:layout_marginTop="10dp"
                         android:orientation="horizontal">
 
-
                         <LinearLayout
                             android:id="@+id/ll5"
                             android:layout_width="0dp"
@@ -372,7 +358,6 @@
                                 android:textColor="#FF0F33B8"
                                 android:textSize="12sp"
                                 android:textStyle="bold" />
-
 
                         </LinearLayout>
 
@@ -408,7 +393,6 @@
 
                         </LinearLayout>
 
-
                         <LinearLayout
                             android:id="@+id/llQuesBank"
                             android:layout_width="0dp"
@@ -421,7 +405,6 @@
                             android:paddingBottom="30dp"
                             android:paddingTop="30dp"
                             android:visibility="visible">
-
 
                             <ImageView
                                 android:layout_width="75dp"
@@ -446,26 +429,6 @@
 
                 </LinearLayout>
 
-                <!--<LinearLayout-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:gravity="center"-->
-                <!--android:orientation="vertical">-->
-
-                <!--<LinearLayout-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="match_parent"-->
-                <!--android:layout_marginBottom="25dp"-->
-                <!--android:layout_marginLeft="15dp"-->
-                <!--android:layout_marginRight="15dp"-->
-                <!--android:layout_marginTop="10dp"-->
-                <!--android:orientation="horizontal">-->
-
-
-                <!--</LinearLayout>-->
-
-                <!--</LinearLayout>-->
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -480,7 +443,6 @@
                         android:layout_marginRight="15dp"
                         android:layout_marginTop="10dp"
                         android:orientation="horizontal">
-
 
                         <LinearLayout
                             android:id="@+id/llAbout"

@@ -29,7 +29,7 @@ public class Activity_Idoms extends AppCompatActivity implements View.OnClickLis
         tvIdom1 = (TextView) findViewById(R.id.tvIdom1);
         tvIdom2 = (TextView) findViewById(R.id.tvIdom2);
         tvIdom3 = (TextView) findViewById(R.id.tvIdom3);
-        btnMsg = (FloatingActionButton)findViewById(R.id.btnMsg);
+        btnMsg = (FloatingActionButton) findViewById(R.id.btnMsg);
         btnMsg.setOnClickListener(this);
         tvIdom1.setOnClickListener(this);
         tvIdom2.setOnClickListener(this);
@@ -38,7 +38,7 @@ public class Activity_Idoms extends AppCompatActivity implements View.OnClickLis
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
 
             case R.id.btnMsg:
                 count.countt();
@@ -52,7 +52,7 @@ public class Activity_Idoms extends AppCompatActivity implements View.OnClickLis
                 Intent intent1 = new Intent(Activity_Idoms.this, Activity_pdf.class);
                 intent1.putExtra("EXTRA_SESSION_ID", "idom1.pdf");
                 startActivity(intent1);
-                finish();
+//                finish();
                 break;
 
             case R.id.tvIdom2:
@@ -60,7 +60,7 @@ public class Activity_Idoms extends AppCompatActivity implements View.OnClickLis
                 Intent intent2 = new Intent(Activity_Idoms.this, Activity_pdf.class);
                 intent2.putExtra("EXTRA_SESSION_ID", "idom2.pdf");
                 startActivity(intent2);
-                finish();
+//                finish();
                 break;
 
             case R.id.tvIdom3:
@@ -68,7 +68,7 @@ public class Activity_Idoms extends AppCompatActivity implements View.OnClickLis
                 Intent intent3 = new Intent(Activity_Idoms.this, Activity_pdf.class);
                 intent3.putExtra("EXTRA_SESSION_ID", "idom3.pdf");
                 startActivity(intent3);
-                finish();
+//                finish();
                 break;
 
         }
