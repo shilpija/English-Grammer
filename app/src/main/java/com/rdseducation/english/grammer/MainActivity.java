@@ -20,7 +20,6 @@ import android.widget.LinearLayout;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
 
 import java.security.MessageDigest;
@@ -251,6 +250,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intent6 = new Intent(MainActivity.this, Activity_pdf.class);
                 intent6.putExtra("EXTRA_SESSION_ID", "phrasal.pdf");
                 startActivity(intent6);
+
                 break;
 
             case R.id.ll3:
@@ -276,6 +276,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intent9 = new Intent(MainActivity.this, Activity_pdf.class);
                 intent9.putExtra("EXTRA_SESSION_ID", "voc.pdf");
                 startActivity(intent9);
+
                 break;
 
             case R.id.llPractice:
@@ -385,7 +386,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
 
                 break;
-
 
         }
     }

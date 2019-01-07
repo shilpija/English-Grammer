@@ -94,7 +94,7 @@ public class Activity_pdf extends AppCompatActivity implements OnPageChangeListe
 
         mAdView.loadAd(adRequest);
 
-        pdfView = (PDFView)findViewById(R.id.pdfView);
+        pdfView = (PDFView) findViewById(R.id.pdfView);
 
         SAMPLE_FILE = getIntent().getStringExtra("EXTRA_SESSION_ID");
 
@@ -189,7 +189,7 @@ public class Activity_pdf extends AppCompatActivity implements OnPageChangeListe
         pageNumber = page;
         totalPage = page + 1 + " " + "of" + " " + pageCount;
         pages = pageCount;
-        Toast.makeText(mContext,totalPage , Toast.LENGTH_SHORT).show();
+        Toast.makeText(mContext, totalPage, Toast.LENGTH_SHORT).show();
 
     }
 

@@ -93,7 +93,6 @@ public class FragmentDrawer extends Fragment {
                 recyclerView.getAdapter().notifyDataSetChanged();
                 drawerListener.onDrawerItemSelected(view, position);
                 mDrawerLayout.closeDrawer(containerView);
-
             }
 
             @Override
@@ -109,6 +108,7 @@ public class FragmentDrawer extends Fragment {
         containerView = getActivity().findViewById(fragmentId);
         mDrawerLayout = drawerLayout;
         mDrawerToggle = new ActionBarDrawerToggle(getActivity(), drawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close) {
+
             @Override
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
@@ -129,7 +129,6 @@ public class FragmentDrawer extends Fragment {
         };
 
         mDrawerLayout.setDrawerListener(mDrawerToggle);
-
         mDrawerToggle.setDrawerIndicatorEnabled(false);
         mDrawerToggle.setHomeAsUpIndicator(R.drawable.hamburger);
 

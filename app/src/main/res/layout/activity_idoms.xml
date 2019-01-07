@@ -130,9 +130,9 @@
                             android:id="@+id/tvIdom1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="I &amp; D1"
                             android:layout_gravity="center"
                             android:layout_marginLeft="10dp"
+                            android:text="I &amp; D1"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
@@ -165,9 +165,9 @@
                             android:id="@+id/tvIdom2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
                             android:layout_marginTop="5dp"
                             android:text="I &amp; D2"
-                            android:layout_marginLeft="10dp"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
@@ -201,8 +201,8 @@
                             android:id="@+id/tvIdom3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
                             android:layout_marginLeft="10dp"
+                            android:layout_marginTop="5dp"
                             android:text="Practice"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -217,12 +217,12 @@
         </ScrollView>
 
         <android.support.design.widget.FloatingActionButton
+            android:id="@+id/btnMsg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
             android:layout_margin="25dp"
-            android:id="@+id/btnMsg"
             app:backgroundTint="@color/colorPrimary"
             app:layout_anchorGravity="bottom|right|end"
             app:srcCompat="@drawable/mail" />

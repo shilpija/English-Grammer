@@ -34,6 +34,7 @@ public class Activity_Website extends AppCompatActivity {
                 Toast.makeText(activity, description, Toast.LENGTH_SHORT).show();
             }
             @TargetApi(android.os.Build.VERSION_CODES.M)
+
             @Override
             public void onReceivedError(WebView view, WebResourceRequest req, WebResourceError rerr) {
                 // Redirect to deprecated method, so you can use it in all SDK versions
